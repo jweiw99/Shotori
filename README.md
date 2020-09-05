@@ -1,6 +1,8 @@
 # Shotori
 E-Shop developed using ASP Web Form and vb.net
 
+This web application allows the e-store owner to publish their product for sales. Users can purchase the products as advertised by the e-store owner.
+
 ## Preview
 
 ![](Images/homepage.PNG)
