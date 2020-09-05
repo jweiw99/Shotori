@@ -1,0 +1,263 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Default.master.vb" Inherits="Shotori._Default1" %>
+
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shotori - E-commerece</title>
+
+    <meta name="description" content="Place to buy your favorite furniture">
+    <meta name="keywords" content="Shotori">
+    <meta name="author" content="">
+
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link href="/Styles/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Owl Carousel main css -->
+    <link href="/Styles/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/Styles/owl.theme.default.min.css" rel="stylesheet" />
+
+    <!-- This core.css file contents all plugings css file. -->
+    <link href="/Styles/core.css" rel="stylesheet" />
+
+    <!-- Theme shortcodes/elements style -->
+    <link href="/Styles/shortcode/shortcodes.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="/Styles/shortcode/all.css" rel="stylesheet" />
+
+    <!-- Theme main style -->
+    <link href="/Styles/style.css" rel="stylesheet" />
+
+    <!-- Responsive css -->
+    <link href="/Styles/responsive.css" rel="stylesheet" />
+
+    <!-- User style -->
+    <link href="/Styles/custom.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Body main wrapper start -->
+    <div class="wrapper fixed__footer">
+        <!-- Start Header Style -->
+        <header id="header" class="htc-header header--3 bg__white">
+            <!-- Start Mainmenu Area -->
+            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
+                            <div class="logo">
+                                <a href="Default.aspx">
+                                    <img src="images/logo/logo.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Start MAinmenu Ares -->
+                        <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
+                            <nav class="mainmenu__nav hidden-xs hidden-sm">
+                                <ul>
+                                    <li>
+                                        <ul class="main__menu">
+                                            <li><a href="Default.aspx">Home</a></li>
+                                            <li><a href="Shop.aspx">Shop</a> </li>
+                                            <li><a href="contact.aspx">contact</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="mobile-menu clearfix visible-xs visible-sm">
+                                <nav id="mobile_dropdown">
+                                    <ul>
+                                        <li><a href="Default.aspx">Home</a></li>
+                                        <li><a href="Shop.aspx">Shop</a>
+
+                                        </li>
+                                        <li><a href="contact.aspx">contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- End MAinmenu Ares -->
+                        <div class="col-md-2 col-sm-4 col-xs-3">
+                            <ul class="menu-extra">
+                                <% If Context.User.Identity.IsAuthenticated Then %>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <p class="d-lg-block d-md-none"><span class="ti-user"></span></p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                        <a class="dropdown-item" href="Profile">Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="ResetPassword">Change Password</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="MyOrder">My Order</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="Logout">Log out</a>
+                                    </div>
+                                    <% Else %>
+                                <li><a href="login.aspx"><span class="ti-user"></span></a></li>
+                                <% End If %>
+
+                                <li class="cart__menu"><a href="Cart"><span class="ti-shopping-cart"></span></a></li>
+                                <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-area"></div>
+                </div>
+            </div>
+            <!-- End Mainmenu Area -->
+        </header>
+        <!-- End Header Style -->
+
+        <div class="body__overlay"></div>
+        <!-- Start Offset Wrapper -->
+        <div class="offset__wrapper">
+            <!-- Start Offset MEnu -->
+            <div class="offsetmenu">
+                <div class="offsetmenu__inner">
+                    <div class="offsetmenu__close__btn">
+                        <a href="#"><i class="zmdi zmdi-close"></i></a>
+                    </div>
+                    <div class="off__contact">
+                        <div class="logo">
+                            <a href="Default.aspx">
+                                <img src="images/logo/logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <p>Shotori is a Dutch-based Swedish multinational group that designs and sells ready-to-assemble furniture, kitchen appliances and home accessories, among other useful goods and occasionally home.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Offset MEnu -->
+        </div>
+        <!-- End Offset Wrapper -->
+        <div class="shadow pb--150 bg-white">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Start Footer Area -->
+        <footer class="htc__foooter__area gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="footer__container clearfix">
+                        <!-- Start Single Footer Widget -->
+                        <div class="col-md-7 col-lg-7 col-sm-12">
+                            <div class="ft__widget">
+                                <div class="ft__logo">
+                                    <a href="Default.aspx">
+                                        <img src="images/logo/logo.png" style="height: 50px" alt="footer logo">
+                                    </a>
+                                </div>
+                                <div class="footer-address">
+                                    <ul>
+                                        <li>
+                                            <div class="address-icon">
+                                                <i class="zmdi zmdi-pin"></i>
+                                            </div>
+                                            <div class="address-text">
+                                                <p>
+                                                    Jalan Universiti, Bandar Barat, 
+                                                    <br>
+                                                    31900 Kampar, Negeri Perak, Malaysia
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="address-icon">
+                                                <i class="zmdi zmdi-email"></i>
+                                            </div>
+                                            <div class="address-text">
+                                                <a href="#">info@utar.edu.my</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="address-icon">
+                                                <i class="zmdi zmdi-phone-in-talk"></i>
+                                            </div>
+                                            <div class="address-text">
+                                                <p>+605-468 8888 </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Footer Widget -->
+                        <!-- Start Single Footer Widget -->
+                        <div class="col-md-5 col-lg-5 col-sm-12 smt-30 xmt-30">
+                            <div class="ft__widget">
+                                <h2 class="ft__title">Infomation</h2>
+                                <ul class="footer-categories">
+                                    <li><a href="contact.aspx">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start Copyright Area -->
+                <div class="htc__copyright__area">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                            <div class="copyright__inner">
+                                <div class="copyright">
+                                    <p>
+                                        © 2020 <a href="#">UTAR</a>
+                                        All Right Reserved.
+                                    </p>
+                                </div>
+                                <ul class="footer__menu">
+                                    <li><a href="Default.aspx">Home</a></li>
+                                    <li><a href="Shop.aspx">Shop</a></li>
+                                    <li><a href="contact.aspx">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Copyright Area -->
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+
+        <!-- jquery latest version -->
+        <script src="/Scripts/vendor/jquery-1.12.0.min.js"></script>
+
+        <!-- Snatch Chat -->
+        <link href="https://snatchbot.me/sdk/webchat.css" rel="stylesheet" type="text/css">
+        <script src="https://snatchbot.me/sdk/webchat.min.js"></script>
+        <script src="/Scripts/snatchbot.js"></script>
+
+        <!-- Bootstrap framework js -->
+        <script src="/Scripts/bootstrap.min.js"></script>
+
+        <!-- All js plugins included in this file. -->
+        <script src="/Scripts/plugins.js"></script>
+        <script src="/Scripts/slick.min.js"></script>
+        <script src="/Scripts/owl.carousel.min.js"></script>
+        <script src="/Scripts/vendor/all.js"></script>
+
+        <!-- Waypoints.min.js. -->
+        <script src="/Scripts/waypoints.min.js"></script>
+
+        <!-- Main js file that contents all jQuery plugins activation. -->
+        <script src="/Scripts/main.js"></script>
+
+        <!-- Modernizr JS -->
+        <script src="/Scripts/vendor/modernizr-2.8.3.min.js"></script>
+        <asp:ContentPlaceHolder ID="Script" runat="server">
+        </asp:ContentPlaceHolder>
+</body>
+</html>
