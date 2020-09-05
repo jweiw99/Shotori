@@ -3,7 +3,7 @@ E-Shop developed using ASP Web Form and vb.net
 
 ## Preview
 
-![](images/homepage.PNG)
+![](Images/homepage.PNG)
 
 ## Account
 Demo link : https://ucca3224g.azurewebsites.net/ 
