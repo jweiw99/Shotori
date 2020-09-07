@@ -25,7 +25,7 @@
                 usrPostal.Value = user.PostalCode
                 ddlstate.SelectedValue = user.State
                 usrAddress.Value = user.Address
-                usrCountry.Value = user.Country
+                usrCountry.Value = "Malaysia"
             Else
                 Response.Redirect("~/Login")
             End If
